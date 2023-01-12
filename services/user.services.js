@@ -17,10 +17,10 @@ exports.updateUserServices = async (userInfo) => {
 exports.getUserServices = async (email) => {
   const query = { email: email };
   const user = await User.findOne(query);
-  let isAdmin = false;
-  if (user?.role === "admin") {
-    isAdmin = true;
-  }
-  const result = { admin: isAdmin };
-  return result;
+  // let isAdmin = false;
+  // if (user?.role === "admin") {
+  //   isAdmin = true;
+  // }
+  // const result = { admin: isAdmin };
+  return user;
 };

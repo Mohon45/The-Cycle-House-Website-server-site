@@ -1,11 +1,12 @@
 const {
   getMyOrdersServices,
   confirmOrderServices,
+  deleteOrderServices,
 } = require("../services/booking.services");
 
 exports.getMyOrders = async (req, res) => {
   try {
-    const { email } = req.params.email;
+    const email = req.params.email;
     const myOrder = await getMyOrdersServices(email);
 
     res.status(200).json({
@@ -39,8 +40,8 @@ exports.confirmOrder = async (req, res) => {
 };
 exports.deleteOrder = async (req, res) => {
   try {
-    const { id } = req.params.id;
-    const order = await confirmOrderServices(id);
+    const id = req.params.id;
+    const order = await deleteOrderServices(id);
 
     res.status(200).json({
       status: "success",

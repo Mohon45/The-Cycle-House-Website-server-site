@@ -10,7 +10,7 @@ const reviewSchema = mongoose.Schema(
       minLength: [3, "Name must be at least 3 characters."],
       maxLength: [100, "Name is too large"],
     },
-    img: {
+    image: {
       type: String,
       validate: [validator.isURL, "Please provide a valid url"],
     },
@@ -20,7 +20,7 @@ const reviewSchema = mongoose.Schema(
       minLength: [1, "Rating must be at least 1."],
       maxLength: [5, "Rating must be too 5."],
     },
-    desc: {
+    description: {
       type: String,
       required: [true, "Please provide a Product Description."],
     },

@@ -10,6 +10,6 @@ exports.createProductServices = async (data) => {
   return product;
 };
 exports.getSingleProductServices = async (id) => {
-  const product = await Product.find({ _id: id });
+  const product = await Product.findOne({ _id: id });
   return product;
 };

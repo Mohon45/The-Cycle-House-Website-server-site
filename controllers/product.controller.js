@@ -38,7 +38,7 @@ exports.createProduct = async (req, res) => {
 };
 exports.getSingleProduct = async (req, res) => {
   try {
-    const { id } = req.params.id;
+    const id = req.params.id;
     const product = await getSingleProductServices(id);
 
     res.status(200).json({

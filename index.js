@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-const ObjectId = require("mongodb").ObjectId;
 const reviewRoutes = require("./routes/v1/review.route");
 const bookingRoutes = require("./routes/v1/booking.route");
 const productRoutes = require("./routes/v1/product.route");
@@ -11,7 +10,7 @@ const errorHandler = require("./middleware/errorHandler.js");
 const { default: mongoose } = require("mongoose");
 
 // database connections
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.m0coh.mongodb.net/${process.env.DB_USER}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.m0coh.mongodb.net/${process.env.DB_Name}?retryWrites=true&w=majority`;
 // Mongoose Connect
 mongoose
   .connect(uri, {
